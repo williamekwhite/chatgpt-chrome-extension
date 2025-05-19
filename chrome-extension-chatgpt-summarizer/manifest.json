@@ -1,0 +1,17 @@
+{
+  "manifest_version": 3,
+  "name": "ChatGPT Summarizer",
+  "version": "1.0",
+  "description": "Copies a page's content and opens ChatGPT in a new tab.",
+  "permissions": ["scripting", "activeTab", "clipboardWrite"],
+  "host_permissions": ["<all_urls>"],
+  "action": {
+    "default_popup": "src/popup/popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["src/content.js"]
+    }
+  ]
+}
